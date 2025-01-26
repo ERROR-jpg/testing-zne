@@ -31,12 +31,7 @@
 }
 
 /* Add the pink lines under the logo */
-.logo-container::after,
-.logo-container::before {
-  content: '';
-  position: absolute;
-  background: #F38CB9;
-}
+
 
 .logo-container::after {
   width: 51.81px;
@@ -137,6 +132,23 @@
   white-space: nowrap;
 }
 
+.nav-links button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.nav-links button:hover {
+  color: #00DDFF;
+}
+
 /* Add media queries for responsiveness */
 @media (max-width: 1680px) {
   .navbar-container {
@@ -168,5 +180,50 @@
   .login-btn {
     padding: 10px 15px;
     font-size: 14px;
+  }
+}
+
+/* Add this near the top of the file with the other initial styles */
+.mobile-menu-button {
+  display: none; /* Hide by default */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Update the mobile media query */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .nav-links {
+    display: none; /* Hide regular nav links */
+  }
+
+  .mobile-menu-button {
+    display: block; /* Only show in mobile view */
+  }
+
+  /* Mobile menu when active */
+  .nav-links.mobile-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #11111d;
+    padding: 20px;
+    gap: 15px;
+    z-index: 1000;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
   }
 } 

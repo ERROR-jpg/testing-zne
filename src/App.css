@@ -40,3 +40,25 @@
     transform: rotate(360deg);
   }
 }
+
+.section-divider {
+  position: relative;
+  width: 90%;
+  height: 1px;
+  margin: 60px auto;
+  background: #808080;
+  opacity: 0.2;
+}
+
+/* Add these new mobile-specific styles */
+@media screen and (max-width: 768px) {
+  .App {
+    padding: 0 10px;
+    overflow-x: hidden;
+  }
+
+  .section-divider {
+    width: 95%;
+    margin: 40px auto;
+  }
+}
